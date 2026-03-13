@@ -1,0 +1,8 @@
+.dashboard{
+    padding:30px;
+}
+
+.medicine-list{
+    display:flex;
+    flex-wrap:wrap;
+}

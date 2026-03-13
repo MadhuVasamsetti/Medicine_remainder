@@ -1,0 +1,24 @@
+.add-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:80vh;
+}
+
+.add-form{
+    display:flex;
+    flex-direction:column;
+    width:300px;
+}
+
+.add-form input{
+    margin:10px 0;
+    padding:10px;
+}
+
+.add-form button{
+    padding:10px;
+    background:#1976d2;
+    color:white;
+    border:none;
+}
