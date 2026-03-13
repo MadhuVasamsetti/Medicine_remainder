@@ -1,41 +1,66 @@
-import { useState } from "react";
-import "../styles/Login.css";
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import "../styles/Auth.css"
 
-function Login() {
+function Login(){
 
-  const [email,setEmail] = useState("");
-  const [password,setPassword] = useState("");
+const [email,setEmail]=useState("")
+const [password,setPassword]=useState("")
 
-  const handleSubmit = (e)=>{
-    e.preventDefault();
-    console.log(email,password);
-  }
+const navigate = useNavigate()
 
-  return (
-    <div className="login-container">
+const handleLogin=(e)=>{
 
-      <form className="login-form" onSubmit={handleSubmit}>
+e.preventDefault()
 
-        <h2>Login</h2>
+const savedUser = JSON.parse(localStorage.getItem("user"))
 
-        <input
-        type="email"
-        placeholder="Email"
-        onChange={(e)=>setEmail(e.target.value)}
-        />
+if(savedUser && savedUser.email===email && savedUser.password===password){
 
-        <input
-        type="password"
-        placeholder="Password"
-        onChange={(e)=>setPassword(e.target.value)}
-        />
+alert("Login Successful")
 
-        <button type="submit">Login</button>
+navigate("/dashboard")
 
-      </form>
+}else{
 
-    </div>
-  );
+alert("Invalid Credentials")
+
 }
 
-export default Login;
+}
+
+return(
+
+<div className="auth">
+
+<h2>Login</h2>
+
+<form onSubmit={handleLogin}>
+
+<input
+type="email"
+placeholder="Email"
+value={email}
+onChange={(e)=>setEmail(e.target.value)}
+required
+/>
+
+<input
+type="password"
+placeholder="Password"
+value={password}
+onChange={(e)=>setPassword(e.target.value)}
+required
+/>
+
+<button type="submit">Login</button>
+
+</form>
+
+</div>
+
+)
+
+}
+
+export default Login

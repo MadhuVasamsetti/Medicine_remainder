@@ -1,29 +1,40 @@
-import MedicineCard from "../components/MedicineCard";
-import "../styles/Dashboard.css";
+import { useNavigate } from "react-router-dom"
+import "../styles/Dashboard.css"
 
 function Dashboard(){
 
-  const medicines = [
-    {id:1,name:"Paracetamol",dosage:"1 Tablet",time:"8:00 AM"},
-    {id:2,name:"Vitamin D",dosage:"1 Capsule",time:"9:00 PM"}
-  ]
+const navigate = useNavigate()
 
-  return(
+const user = JSON.parse(localStorage.getItem("user"))
 
-    <div className="dashboard">
+const logout=()=>{
 
-      <h2>Your Medicines</h2>
+localStorage.removeItem("user")
 
-      <div className="medicine-list">
+navigate("/login")
 
-        {medicines.map((med)=>(
-          <MedicineCard key={med.id} medicine={med}/>
-        ))}
+}
 
-      </div>
+return(
 
-    </div>
-  )
+<div className="dashboard">
+
+<h2>Welcome {user?.name}</h2>
+
+<p>Your Medicine Reminder Dashboard</p>
+
+<button onClick={()=>navigate("/add-medicine")}>
+Add Medicine
+</button>
+
+<button className="logout" onClick={logout}>
+Logout
+</button>
+
+</div>
+
+)
+
 }
 
 export default Dashboard

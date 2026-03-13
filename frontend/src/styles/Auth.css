@@ -1,0 +1,25 @@
+.auth{
+width:300px;
+margin:auto;
+margin-top:80px;
+display:flex;
+flex-direction:column;
+text-align:center;
+}
+
+.auth input{
+margin:10px 0;
+padding:10px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+.auth button{
+margin-top:10px;
+padding:10px;
+background:#6c63ff;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}

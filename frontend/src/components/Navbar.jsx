@@ -5,11 +5,12 @@ function Navbar() {
   return (
     <nav className="navbar">
 
-      <h2 className="logo">Medicine Reminder</h2>
+      <h2>Medicine Reminder</h2>
 
       <div className="nav-links">
-        <Link to="/">Dashboard</Link>
-        <Link to="/add-medicine">Add Medicine</Link>
+        <Link to="/">Home</Link>
+        <Link to="/about">About App</Link>
+        <Link to="/how">How It Works</Link>
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
       </div>

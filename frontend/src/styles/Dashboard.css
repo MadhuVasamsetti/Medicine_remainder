@@ -1,8 +1,18 @@
 .dashboard{
-    padding:30px;
+text-align:center;
+padding:60px;
 }
 
-.medicine-list{
-    display:flex;
-    flex-wrap:wrap;
+.dashboard button{
+margin:10px;
+padding:10px 20px;
+border:none;
+background:#6c63ff;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+.logout{
+background:red;
 }

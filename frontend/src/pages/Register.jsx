@@ -1,48 +1,83 @@
 import { useState } from "react";
-import "../styles/Register.css";
+import { useNavigate } from "react-router-dom";
+import "../styles/Auth.css";
 
-function Register(){
+function Register() {
 
-  const [name,setName] = useState("");
-  const [email,setEmail] = useState("");
-  const [password,setPassword] = useState("");
+const [name,setName]=useState("")
+const [email,setEmail]=useState("")
+const [password,setPassword]=useState("")
+const [phone,setPhone]=useState("")
 
-  const handleSubmit = (e)=>{
-    e.preventDefault();
-    console.log(name,email,password);
-  }
+const navigate = useNavigate()
 
-  return(
-    <div className="register-container">
+const handleRegister=(e)=>{
 
-      <form className="register-form" onSubmit={handleSubmit}>
+e.preventDefault()
 
-        <h2>Register</h2>
+const user={
+name,
+email,
+password,
+phone
+}
 
-        <input
-        type="text"
-        placeholder="Name"
-        onChange={(e)=>setName(e.target.value)}
-        />
+localStorage.setItem("user",JSON.stringify(user))
 
-        <input
-        type="email"
-        placeholder="Email"
-        onChange={(e)=>setEmail(e.target.value)}
-        />
+alert("Registration Successful")
 
-        <input
-        type="password"
-        placeholder="Password"
-        onChange={(e)=>setPassword(e.target.value)}
-        />
+navigate("/login")
 
-        <button type="submit">Register</button>
+}
 
-      </form>
+return(
 
-    </div>
-  )
+<div className="auth">
+
+<h2>Register</h2>
+
+<form onSubmit={handleRegister}>
+
+<input
+type="text"
+placeholder="Name"
+value={name}
+onChange={(e)=>setName(e.target.value)}
+required
+/>
+
+<input
+type="email"
+placeholder="Email"
+value={email}
+onChange={(e)=>setEmail(e.target.value)}
+required
+/>
+
+<input
+type="password"
+placeholder="Password"
+value={password}
+onChange={(e)=>setPassword(e.target.value)}
+required
+/>
+
+<input
+type="text"
+placeholder="Phone Number"
+value={phone}
+onChange={(e)=>setPhone(e.target.value)}
+required
+/>
+
+<button type="submit">Register</button>
+
+</form>
+
+</div>
+
+)
+
 }
 
 export default Register
