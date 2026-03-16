@@ -11,7 +11,7 @@ function Home() {
 
         <div className="hero-text">
 
-          <h1>Medicine Reminder System</h1>
+          <h1>Medicine Reminder</h1>
 
           <p>
             Never forget your medicines again. Our smart reminder system
