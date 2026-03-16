@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className="home">
 
-      {/* HERO */}
+      
 
       <section className="hero">
 

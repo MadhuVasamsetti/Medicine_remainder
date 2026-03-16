@@ -1,59 +1,83 @@
 .home{
-font-family:Arial;
+font-family: Arial;
+overflow-x: hidden;
 }
 
-/* HERO */
+/* HERO SECTION */
 
 .hero{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:80px;
-background:linear-gradient(120deg,#6c63ff,#9a8cff);
+padding:100px 80px;
+background:linear-gradient(135deg,#667eea,#764ba2);
 color:white;
+animation:fadeIn 1.5s ease;
 }
 
 .hero h1{
-font-size:50px;
+font-size:52px;
 margin-bottom:20px;
+animation:slideLeft 1s ease;
 }
 
 .hero p{
 font-size:18px;
 max-width:500px;
+line-height:1.6;
+animation:slideLeft 1.2s ease;
 }
 
 .hero-buttons{
 margin-top:30px;
 }
 
+/* BUTTONS */
+
 .btn-primary{
 background:white;
 color:#6c63ff;
-padding:12px 25px;
-border-radius:6px;
+padding:14px 28px;
+border-radius:30px;
 text-decoration:none;
-margin-right:15px;
 font-weight:bold;
+margin-right:15px;
+transition:0.3s;
+}
+
+.btn-primary:hover{
+transform:scale(1.1);
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
 }
 
 .btn-secondary{
 border:2px solid white;
+padding:14px 28px;
+border-radius:30px;
 color:white;
-padding:12px 25px;
-border-radius:6px;
 text-decoration:none;
+transition:0.3s;
 }
+
+.btn-secondary:hover{
+background:white;
+color:#6c63ff;
+transform:scale(1.1);
+}
+
+/* HERO IMAGE FLOATING */
 
 .hero-image img{
-width:260px;
+width:280px;
+animation:float 4s ease-in-out infinite;
 }
 
-/* PROBLEM */
+/* PROBLEM SECTION */
 
 .problem{
-padding:70px;
+padding:80px;
 text-align:center;
+animation:fadeUp 1s ease;
 }
 
 .problem-grid{
@@ -65,17 +89,24 @@ flex-wrap:wrap;
 }
 
 .problem-card{
-background:#f4f4f4;
+background:white;
 padding:25px;
 width:250px;
-border-radius:10px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.problem-card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 25px rgba(0,0,0,0.2);
 }
 
 /* FEATURES */
 
 .features{
-padding:70px;
-background:#fafafa;
+padding:80px;
+background:#f9f9ff;
 text-align:center;
 }
 
@@ -89,16 +120,22 @@ flex-wrap:wrap;
 
 .feature-card{
 background:white;
-padding:25px;
+padding:30px;
 width:250px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.4s;
+}
+
+.feature-card:hover{
+transform:scale(1.05);
+box-shadow:0 15px 30px rgba(0,0,0,0.2);
 }
 
 /* HOW IT WORKS */
 
 .how{
-padding:70px;
+padding:80px;
 text-align:center;
 }
 
@@ -111,30 +148,36 @@ flex-wrap:wrap;
 }
 
 .step{
-background:#f4f4f4;
-padding:20px;
-width:200px;
-border-radius:10px;
+background:#f4f4ff;
+padding:25px;
+width:220px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.step:hover{
+transform:translateY(-8px);
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
 }
 
 /* BENEFITS */
 
 .benefits{
-padding:70px;
-background:#f5f5ff;
+padding:80px;
+background:#f3f3ff;
 text-align:center;
 }
 
 .benefits ul{
 list-style:none;
-font-size:18px;
-margin-top:30px;
+font-size:20px;
+line-height:2;
 }
 
 /* TESTIMONIALS */
 
 .testimonials{
-padding:70px;
+padding:80px;
 text-align:center;
 }
 
@@ -147,19 +190,30 @@ flex-wrap:wrap;
 }
 
 .testimonial{
-background:#f4f4f4;
-padding:25px;
+background:white;
+padding:30px;
 width:300px;
-border-radius:10px;
+border-radius:12px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.testimonial:hover{
+transform:scale(1.05);
 }
 
 /* CTA */
 
 .cta{
-padding:60px;
-background:#6c63ff;
+padding:70px;
+background:linear-gradient(135deg,#667eea,#764ba2);
 color:white;
 text-align:center;
+}
+
+.cta .btn-primary{
+margin-top:20px;
+display:inline-block;
 }
 
 /* FOOTER */
@@ -167,6 +221,41 @@ text-align:center;
 .footer{
 background:#222;
 color:white;
-padding:20px;
+padding:25px;
 text-align:center;
+}
+
+/* ANIMATIONS */
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes fadeIn{
+0%{opacity:0;}
+100%{opacity:1;}
+}
+
+@keyframes slideLeft{
+0%{
+opacity:0;
+transform:translateX(-50px);
+}
+100%{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+@keyframes fadeUp{
+0%{
+opacity:0;
+transform:translateY(50px);
+}
+100%{
+opacity:1;
+transform:translateY(0);
+}
 }
