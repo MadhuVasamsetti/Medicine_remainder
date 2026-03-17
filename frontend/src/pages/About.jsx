@@ -6,7 +6,7 @@ return(
 
 <div className="about">
 
-<h1>About Our App</h1>
+<h1>About Our </h1>
 
 <p>
 Medicine Reminder System is designed to help people
