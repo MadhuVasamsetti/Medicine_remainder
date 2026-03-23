@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <nav className="navbar">
 
-      <h2>Medicine Reminder</h2>
+      <h2>Medicine </h2>
 
       <div className="nav-links">
         <Link to="/">Home</Link>
