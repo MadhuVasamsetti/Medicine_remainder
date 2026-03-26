@@ -15,7 +15,7 @@ function Home() {
 
           <p>
             Never forget your medicines again. Our smart reminder system
-            helps patients take medicines on time and stay.
+            helps patients take medicines on time and stay healthy.
           </p>
 
           <div className="hero-buttons">
