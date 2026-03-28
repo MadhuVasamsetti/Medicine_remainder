@@ -25,7 +25,7 @@ function AddMedicine(){
 
       <form className="add-form" onSubmit={handleSubmit}>
 
-        <h2>Add Medicine</h2>
+        <h2>Add </h2>
 
         <input
         type="text"
